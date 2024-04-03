@@ -1,5 +1,3 @@
-if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
-
 -- AstroLSP allows you to customize the features in AstroNvim's LSP configuration engine
 -- Configuration documentation can be found with `:h astrolsp`
 -- NOTE: We highly recommend setting up the Lua Language Server (`:LspInstall lua_ls`)
@@ -12,7 +10,7 @@ return {
   opts = {
     -- Configuration table of features provided by AstroLSP
     features = {
-      autoformat = true, -- enable or disable auto formatting on start
+      autoformat = false, -- enable or disable auto formatting on start
       codelens = true, -- enable/disable codelens refresh on start
       inlay_hints = false, -- enable/disable inlay hints on start
       semantic_tokens = true, -- enable/disable semantic token highlighting
@@ -21,7 +19,7 @@ return {
     formatting = {
       -- control auto formatting on save
       format_on_save = {
-        enabled = true, -- enable or disable format on save globally
+        enabled = false, -- enable or disable format on save globally
         allow_filetypes = { -- enable format on save for specified filetypes only
           -- "go",
         },
@@ -96,6 +94,14 @@ return {
         --   desc = "Toggle LSP semantic highlight (buffer)",
         --   cond = function(client) return client.server_capabilities.semanticTokensProvider and vim.lsp.semantic_tokens end,
         -- },
+        ["<leader>la"] = { function() vim.lsp.buf.code_action() end, desc = "Apply code actions" },
+        ["<leader>lh"] = { function() vim.lsp.buf.signature_help() end, desc = "Signature Help" },
+        ["<leader>lr"] = { function() vim.lsp.buf.rename() end, desc = "Rename" },
+        ["<leader>lR"] = { function() vim.lsp.buf.references() end, desc = "References" },
+        ["<leader>li"] = { function() vim.lsp.buf.implementation() end, desc = "Implementation" },
+        ["<leader>lt"] = { function() vim.lsp.buf.type_definition() end, desc = "Type Definition" },
+        ["<leader>ld"] = { function() vim.lsp.buf.definition() end, desc = "Definition" },
+        ["<leader>lD"] = { function() vim.lsp.buf.declaration() end, desc = "Declaration" },
       },
     },
     -- A custom `on_attach` function to be run after the default `on_attach` function
