@@ -91,6 +91,7 @@ return {
         -- tables with just a `desc` key will be registered with which-key if it's installed
         -- this is useful for naming menus
         ["<Leader>b"] = { desc = "Buffers" },
+        ["<Leader>ba"] = {"<cmd>AerialNavToggle<CR>", desc = "Toggle Aerial Nav"},
         ["<Leader>um"] = {function ()
           if vim.opt.relativenumber:get() then
             vim.opt.relativenumber = false
