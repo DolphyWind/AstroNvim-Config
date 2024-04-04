@@ -3,6 +3,23 @@
 -- NOTE: We highly recommend setting up the Lua Language Server (`:LspInstall lua_ls`)
 --       as this provides autocomplete and documentation while editing
 
+function debug_table_as_str(tbl, indent)
+  indent = indent or 0
+  local spacing = string.rep(" ", indent)
+  local result = ""
+
+  for key, value in pairs(tbl) do
+    if type(value) == "table" then
+      result = result .. spacing .. "[" .. tostring(key) .. "] => Table:\n"
+      result = result .. debug_table_as_str(value, indent + 1)
+    else
+      result = result .. spacing .. "[" .. tostring(key) .. "] => " .. tostring(value) .. "\n"
+    end
+  end
+
+  return result
+end
+
 ---@type LazySpec
 return {
   "AstroNvim/astrocore",
@@ -74,6 +91,14 @@ return {
         -- tables with just a `desc` key will be registered with which-key if it's installed
         -- this is useful for naming menus
         ["<Leader>b"] = { desc = "Buffers" },
+        ["<Leader>um"] = {function ()
+          if vim.opt.relativenumber:get() then
+            vim.opt.relativenumber = false
+          else
+            vim.opt.relativenumber = true
+          end
+        end, desc = "Toggle relativenumber"}
+
         -- quick save
         -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
       },
