@@ -102,10 +102,11 @@ return {
         ["<leader>lt"] = { function() vim.lsp.buf.type_definition() end, desc = "Type Definition" },
         ["<leader>ld"] = { function() vim.lsp.buf.definition() end, desc = "Definition" },
         ["<leader>lD"] = { function() vim.lsp.buf.declaration() end, desc = "Declaration" },
-        ["<leader>lF"] = { function() vim.lsp.buf.format() end, desc = "Format buffer"},
-        ["<leader>lf"] = { function() vim.diagnostic.open_float() end, desc = "Open Diagnostic"},
+        ["<leader>lf"] = { function() vim.lsp.buf.format() end, desc = "Format buffer"},
+        ["<leader>lo"] = { function() vim.diagnostic.open_float() end, desc = "Open Diagnostic"},
         ["<leader>lh"] = { function() vim.diagnostic.goto_prev() end, desc = "Move to the Previous Diagnostic"},
         ["<leader>ll"] = { function() vim.diagnostic.goto_next() end, desc = "Move to the Next Diagnostic"},
+        ["<leader>lc"] = { "<cmd>DogeGenerate<CR>", desc = "Generate documentation comments" },
       },
     },
     -- A custom `on_attach` function to be run after the default `on_attach` function
