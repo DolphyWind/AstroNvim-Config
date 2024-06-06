@@ -53,7 +53,7 @@ return {
   },
 
   -- Disable Flash.nvim
-  -- {"folke/flash.nvim", enabled=false,
+  -- {"folke/flash.nvim", enabled=false,}
 
   -- You can also easily customize additional setup of plugins that is outside of the plugin's setup call
   {

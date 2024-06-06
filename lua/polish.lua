@@ -32,7 +32,23 @@ lspconfig.clangd.setup {
   cmd = {
     "clangd",
     "--offset-encoding=utf-16",
+    "--clang-tidy",
+    "--cross-file-rename",
+    "--background-index",
   },
+}
+
+lspconfig.pylsp.setup{
+  settings = {
+    pylsp = {
+      plugins = {
+        pycodestyle = {
+          enabled = false,
+          maxLineLength = 100
+        }
+      }
+    }
+  }
 }
 
 lspconfig.jdtls.setup {}
@@ -71,4 +87,5 @@ require("aerial").setup({
 })
 
 -- vim.keymap.set("n", "<leader>lf", "<cmd>lua vim.diagnostic.open_float()<CR><cmd>lua vim.diagnostic.open_float()<CR>")
-
+vim.opt.wrap = false
+vim.wo.wrap = false
