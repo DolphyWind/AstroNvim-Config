@@ -121,3 +121,7 @@ ls.add_snippets("cpp", {
     t("for(const auto& item : "), i(1, "collection"), t({")", "{", "    std::cout << item << \", \";", "}", "std::cout << '\\n';"})
   })
 })
+
+-- vim.keymap.set('n', '<leader>le', generate_enum_tostring_array, { noremap = true })
+
+

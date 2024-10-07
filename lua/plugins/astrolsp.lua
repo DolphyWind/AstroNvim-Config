@@ -107,6 +107,10 @@ return {
         ["<leader>lh"] = { function() vim.diagnostic.goto_prev() end, desc = "Move to the Previous Diagnostic"},
         ["<leader>ll"] = { function() vim.diagnostic.goto_next() end, desc = "Move to the Next Diagnostic"},
         ["<leader>lc"] = { "<cmd>DogeGenerate<CR>", desc = "Generate documentation comments" },
+        ["<leader>le"] = { function()
+          local h = require('helpers')
+          h.generate_enum_tostring_array()
+        end, desc = "Generate enum to string array." }
       },
     },
     -- A custom `on_attach` function to be run after the default `on_attach` function
