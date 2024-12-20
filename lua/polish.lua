@@ -124,4 +124,3 @@ ls.add_snippets("cpp", {
 
 -- vim.keymap.set('n', '<leader>le', generate_enum_tostring_array, { noremap = true })
 
-
