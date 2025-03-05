@@ -123,4 +123,9 @@ ls.add_snippets("cpp", {
 })
 
 -- vim.keymap.set('n', '<leader>le', generate_enum_tostring_array, { noremap = true })
+vim.keymap.set('i', '<C-Tab>', 'copilot#Accept("\\<CR>")', {
+          expr = true,
+          replace_keycodes = false
+        })
+        vim.g.copilot_no_tab_map = true
 
