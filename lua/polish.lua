@@ -35,7 +35,7 @@ lspconfig.clangd.setup {
     "--clang-tidy",
     "--cross-file-rename",
     "--background-index",
-    "--fallback-style=webkit",
+    "--fallback-style=WebKit",
   },
 }
 
