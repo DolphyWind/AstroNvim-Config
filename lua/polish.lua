@@ -39,18 +39,18 @@ lspconfig.clangd.setup {
   },
 }
 
-lspconfig.pylsp.setup{
-  settings = {
-    pylsp = {
-      plugins = {
-        pycodestyle = {
-          enabled = false,
-          maxLineLength = 100
-        }
-      }
-    }
-  }
-}
+-- lspconfig.pylsp.setup{
+--   settings = {
+--     pylsp = {
+--       plugins = {
+--         pycodestyle = {
+--           enabled = false,
+--           maxLineLength = 100
+--         }
+--       }
+--     }
+--   }
+-- }
 
 lspconfig.jdtls.setup {}
 
