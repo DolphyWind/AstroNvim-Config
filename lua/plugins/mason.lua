@@ -13,8 +13,8 @@ return {
         "lua-language-server",
         "clangd",
         "cmake-language-server",
-        -- "python-lsp-server",
-        "pyright",
+        "python-lsp-server",
+        -- "pyright",
         "rust-analyzer",
         "jdtls",
 

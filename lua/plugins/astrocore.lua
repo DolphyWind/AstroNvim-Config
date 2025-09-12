@@ -100,8 +100,10 @@ return {
           desc = "Toggle relativenumber",
         },
 
-        ["<Leader>mp"] = { "<cmd>Copilot panel<CR>", desc = "Copilot Panel" },
-        ["<Leader>mc"] = { "<cmd>Copilot disable<CR>", desc = "Disable copilot" },
+        ["<Leader>md"] = { "<Plug>(doge-generate)" , desc = "Generate docstrings"}
+
+        -- ["<Leader>mp"] = { "<cmd>Copilot panel<CR>", desc = "Copilot Panel" },
+        -- ["<Leader>mc"] = { "<cmd>Copilot disable<CR>", desc = "Disable copilot" },
 
         -- quick save
         -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command

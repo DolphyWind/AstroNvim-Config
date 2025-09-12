@@ -12,21 +12,6 @@ return {
     event = "BufRead",
     config = function() require("lsp_signature").setup() end,
   },
-  {
-    "folke/todo-comments.nvim",
-    dependencies = { "nvim-lua/plenary.nvim" },
-    opts = {},
-    event = "User Astrofile",
-  },
-  {
-    "iamcco/markdown-preview.nvim",
-    cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
-    ft = { "markdown" },
-    build = function() vim.fn["mkdp#util#install"]() end,
-  },
-  {
-    "kkoomen/vim-doge",
-  },
 
   -- == Examples of Overriding Plugins ==
 

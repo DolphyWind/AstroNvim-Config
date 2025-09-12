@@ -1,4 +1,3 @@
-
 return {
     {
     "folke/noice.nvim",
