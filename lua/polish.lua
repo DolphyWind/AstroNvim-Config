@@ -102,8 +102,8 @@ local ri = function (insert_node_id)
 end
 
 ls.add_snippets("python", {
-  s("main", {
-    t({"def main():", "    "}), i(0, "pass"), t({"", "", "if __name__ == '__main__':", "    main()"})
+  s("namemain", {
+    t({"def main():", "    "}), i(0, "pass"), t({"", "", "", "if __name__ == '__main__':", "    main()"})
   }),
 })
 
