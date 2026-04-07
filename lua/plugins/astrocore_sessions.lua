@@ -17,7 +17,7 @@ return {
         }, -- working directories to ignore sessions in
         filetypes = {
           "gitcommit",
-          "gitrebase"
+          "gitrebase",
         }, -- filetypes to ignore sessions
         buftypes = {}, -- buffer types to ignore sessions
       },

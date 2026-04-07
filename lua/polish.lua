@@ -26,33 +26,34 @@ local lspconfig = require "lspconfig"
 --   desc = "Start pico8-ls"
 -- })
 
-lspconfig.clangd.setup {
-  on_attach = on_attach,
-  capabilities = cmp_nvim_lsp.default_capabilities(),
-  cmd = {
-    "clangd",
-    "--offset-encoding=utf-16",
-    "--clang-tidy",
-    "--cross-file-rename",
-    "--background-index",
-    "--fallback-style=WebKit",
-  },
-}
+vim.lsp.config('clangd', {
+    capabilities = cmp_nvim_lsp.default_capabilities(),
+    cmd = {
+        "clangd",
+        "--offset-encoding=utf-16",
+        "--clang-tidy",
+        "--cross-file-rename",
+        "--background-index",
+        "--fallback-style=WebKit",
+    },
+})
 
-lspconfig.pylsp.setup{
-  settings = {
-    pylsp = {
-      plugins = {
-        pycodestyle = {
-          enabled = true,
-          maxLineLength = 120
-        }
-      }
-    }
-  }
-}
+vim.lsp.config('pylsp', {
+    settings = {
+        pylsp = {
+            plugins = {
+                pycodestyle = {
+                    enabled = true,
+                    maxLineLength = 120,
+                },
+            },
+        },
+    },
+})
 
-lspconfig.jdtls.setup {}
+vim.lsp.enable('clangd')
+vim.lsp.enable('pylsp')
+vim.lsp.enable("jdtls")
 
 require("presence").setup {
   enable = false,
