@@ -97,6 +97,13 @@ return {
         },
 
         ["<Leader>md"] = { "<Plug>(doge-generate)", desc = "Generate docstrings" },
+        ["<Leader>mo"] = { function() require("opencode").ask("@this: ", { submit = true }) end, desc = "Ask opencode…" },
+        ["<Leader>ms"] = { function() require("opencode").select() end, desc = "Select opencode…" },
+        ["<Leader>mt"] = { function() require("opencode").toggle() end, desc = "Toggle opencode" },
+        ["<Leader>mr"] = { function() return require("opencode").operator("@this ") end, desc = "Add range to opencode", expr = true },
+        ["<Leader>my"] = { function() return require("opencode").operator("@this ") .. "_" end, desc = "Add line to opencode", expr = true },
+        ["<Leader>mk"] = { function() require("opencode").command("session.half.page.up") end, desc = "Scroll opencode up" },
+        ["<Leader>ml"] = { function() require("opencode").command("session.half.page.down") end, desc = "Scroll opencode down" },
 
         -- ["<Leader>mp"] = { "<cmd>Copilot panel<CR>", desc = "Copilot Panel" },
         -- ["<Leader>mc"] = { "<cmd>Copilot disable<CR>", desc = "Disable copilot" },
@@ -110,6 +117,16 @@ return {
 
         -- setting a mapping to false will disable it
         -- ["<C-S>"] = false,
+      },
+      x = {
+        ["<Leader>m"] = { desc = "Custom" },
+        ["<Leader>mo"] = { function() require("opencode").ask("@this: ", { submit = true }) end, desc = "Ask opencode…" },
+        ["<Leader>ms"] = { function() require("opencode").select() end, desc = "Select opencode…" },
+        ["<Leader>mr"] = { function() return require("opencode").operator("@this ") end, desc = "Add range to opencode", expr = true },
+      },
+      t = {
+        ["<Leader>m"] = { desc = "Custom" },
+        ["<Leader>mt"] = { function() require("opencode").toggle() end, desc = "Toggle opencode" },
       },
     },
   },

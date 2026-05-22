@@ -16,7 +16,7 @@
 -- }
 
 local cmp_nvim_lsp = require "cmp_nvim_lsp"
-local lspconfig = require "lspconfig"
+-- local lspconfig = require "lspconfig"
 
 -- vim.api.nvim_create_autocmd({"FileType"}, {
 --   pattern = "pico",
@@ -32,7 +32,6 @@ vim.lsp.config('clangd', {
         "clangd",
         "--offset-encoding=utf-16",
         "--clang-tidy",
-        "--cross-file-rename",
         "--background-index",
         "--fallback-style=WebKit",
     },
@@ -52,7 +51,7 @@ vim.lsp.config('pylsp', {
 })
 
 vim.lsp.enable('clangd')
-vim.lsp.enable('pylsp')
+-- vim.lsp.enable('pylsp')
 vim.lsp.enable("jdtls")
 
 require("presence").setup {
@@ -130,3 +129,8 @@ vim.keymap.set('i', '<C-Tab>', 'copilot#Accept("\\<CR>")', {
         })
         vim.g.copilot_no_tab_map = true
 
+vim.filetype.add({
+    extension = {
+        tpp = "cpp",
+    },
+})
