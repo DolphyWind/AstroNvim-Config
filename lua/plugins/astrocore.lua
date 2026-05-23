@@ -84,6 +84,7 @@ return {
         -- this is useful for naming menus
         ["<Leader>b"] = { desc = "Buffers" },
         ["<Leader>m"] = { desc = "Custom" },
+        ["<Leader>mo"] = { desc = "OpenCode" },
         ["<Leader>ma"] = { "<cmd>AerialNavToggle<CR>", desc = "Toggle Aerial Nav" },
         ["<Leader>mm"] = {
           function()
@@ -97,13 +98,13 @@ return {
         },
 
         ["<Leader>md"] = { "<Plug>(doge-generate)", desc = "Generate docstrings" },
-        ["<Leader>mo"] = { function() require("opencode").ask("@this: ", { submit = true }) end, desc = "Ask opencode…" },
-        ["<Leader>ms"] = { function() require("opencode").select() end, desc = "Select opencode…" },
-        ["<Leader>mt"] = { function() require("opencode").toggle() end, desc = "Toggle opencode" },
-        ["<Leader>mr"] = { function() return require("opencode").operator("@this ") end, desc = "Add range to opencode", expr = true },
-        ["<Leader>my"] = { function() return require("opencode").operator("@this ") .. "_" end, desc = "Add line to opencode", expr = true },
-        ["<Leader>mk"] = { function() require("opencode").command("session.half.page.up") end, desc = "Scroll opencode up" },
-        ["<Leader>ml"] = { function() require("opencode").command("session.half.page.down") end, desc = "Scroll opencode down" },
+        ["<Leader>moc"] = { function() require("opencode").ask("@this: ", { submit = true }) end, desc = "Ask opencode…" },
+        ["<Leader>mos"] = { function() require("opencode").select() end, desc = "Select opencode…" },
+        ["<Leader>mot"] = { function() require("opencode").toggle() end, desc = "Toggle opencode" },
+        ["<Leader>mor"] = { function() return require("opencode").operator("@this ") end, desc = "Add range to opencode", expr = true },
+        ["<Leader>moy"] = { function() return require("opencode").operator("@this ") .. "_" end, desc = "Add line to opencode", expr = true },
+        ["<Leader>mok"] = { function() require("opencode").command("session.half.page.up") end, desc = "Scroll opencode up" },
+        ["<Leader>mol"] = { function() require("opencode").command("session.half.page.down") end, desc = "Scroll opencode down" },
 
         -- ["<Leader>mp"] = { "<cmd>Copilot panel<CR>", desc = "Copilot Panel" },
         -- ["<Leader>mc"] = { "<cmd>Copilot disable<CR>", desc = "Disable copilot" },
@@ -120,13 +121,13 @@ return {
       },
       x = {
         ["<Leader>m"] = { desc = "Custom" },
-        ["<Leader>mo"] = { function() require("opencode").ask("@this: ", { submit = true }) end, desc = "Ask opencode…" },
-        ["<Leader>ms"] = { function() require("opencode").select() end, desc = "Select opencode…" },
-        ["<Leader>mr"] = { function() return require("opencode").operator("@this ") end, desc = "Add range to opencode", expr = true },
+        ["<Leader>moc"] = { function() require("opencode").ask("@this: ", { submit = true }) end, desc = "Ask opencode…" },
+        ["<Leader>mos"] = { function() require("opencode").select() end, desc = "Select opencode…" },
+        ["<Leader>mor"] = { function() return require("opencode").operator("@this ") end, desc = "Add range to opencode", expr = true },
       },
       t = {
-        ["<Leader>m"] = { desc = "Custom" },
-        ["<Leader>mt"] = { function() require("opencode").toggle() end, desc = "Toggle opencode" },
+        ["<Leader>mo"] = { desc = "Custom" },
+        ["<Leader>mot"] = { function() require("opencode").toggle() end, desc = "Toggle opencode" },
       },
     },
   },
