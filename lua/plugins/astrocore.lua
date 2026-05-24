@@ -85,6 +85,7 @@ return {
         ["<Leader>b"] = { desc = "Buffers" },
         ["<Leader>m"] = { desc = "Custom" },
         ["<Leader>mo"] = { desc = "OpenCode" },
+        ["<Leader>mc"] = { desc = "Claude Code" },
         ["<Leader>ma"] = { "<cmd>AerialNavToggle<CR>", desc = "Toggle Aerial Nav" },
         ["<Leader>mm"] = {
           function()
@@ -106,18 +107,19 @@ return {
         ["<Leader>mok"] = { function() require("opencode").command("session.half.page.up") end, desc = "Scroll opencode up" },
         ["<Leader>mol"] = { function() require("opencode").command("session.half.page.down") end, desc = "Scroll opencode down" },
 
-        -- ["<Leader>mp"] = { "<cmd>Copilot panel<CR>", desc = "Copilot Panel" },
-        -- ["<Leader>mc"] = { "<cmd>Copilot disable<CR>", desc = "Disable copilot" },
-
-        -- quick save
-        -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
+        ["<Leader>mcc"] = { "<cmd>ClaudeCode<cr>", desc = "Toggle Claude" },
+        ["<Leader>mcf"] = { "<cmd>ClaudeCodeFocus<cr>", desc = "Focus Claude" },
+        ["<Leader>mcr"] = { "<cmd>ClaudeCode --resume<cr>", desc = "Resume Claude" },
+        ["<Leader>mcC"] = { "<cmd>ClaudeCode --continue<cr>", desc = "Continue Claude" },
+        ["<Leader>mcm"] = { "<cmd>ClaudeCodeSelectModel<cr>", desc = "Select Claude model" },
+        ["<Leader>mcb"] = { "<cmd>ClaudeCodeAdd %<cr>", desc = "Add current buffer" },
+        ["<Leader>mca"] = { "<cmd>ClaudeCodeDiffAccept<cr>", desc = "Accept diff" },
+        ["<Leader>mcd"] = { "<cmd>ClaudeCodeDiffDeny<cr>", desc = "Deny diff" },
+        -- ["<Leader>mcs"] = { "<cmd>ClaudeCodeTreeAdd<cr>", desc = "Add file", ft = { "NvimTree", "neo-tree", "oil", "minifiles", "netrw" },}
 
         -- tables with just a `desc` key will be registered with which-key if it's installed
         -- this is useful for naming menus
         -- ["<Leader>b"] = { desc = "Buffers" },
-
-        -- setting a mapping to false will disable it
-        -- ["<C-S>"] = false,
       },
       x = {
         ["<Leader>m"] = { desc = "Custom" },
@@ -129,6 +131,9 @@ return {
         ["<Leader>mo"] = { desc = "Custom" },
         ["<Leader>mot"] = { function() require("opencode").toggle() end, desc = "Toggle opencode" },
       },
+      v = {
+        ["<leader>mcs"] = { "<cmd>ClaudeCodeSend<cr>", desc = "Send to Claude" },
+      }
     },
   },
 }
