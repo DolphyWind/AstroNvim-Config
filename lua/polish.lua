@@ -50,6 +50,36 @@ vim.lsp.config('pylsp', {
     },
 })
 
+vim.lsp.config("rust_analyzer", {
+    settings = {
+        ["rust-analyzer"] = {
+            cargo = {
+                allFeatures = true,
+            },
+            check = {
+                command = "clippy",
+                extraArgs = {
+                    "--",
+                    "-A",
+                    "clippy::needless_return",
+                },
+            },
+            procMacro = {
+                enable = true,
+            },
+            inlayHints = {
+                typeHints = {
+                    enable = true,
+                },
+                parameterHints = {
+                    enable = true,
+                },
+            },
+        },
+    },
+})
+
+vim.lsp.enable("rust_analyzer")
 vim.lsp.enable('clangd')
 -- vim.lsp.enable('pylsp')
 vim.lsp.enable("jdtls")
