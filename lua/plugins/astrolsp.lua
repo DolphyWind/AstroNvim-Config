@@ -104,7 +104,7 @@ return {
         --   cond = function(client) return client.server_capabilities.semanticTokensProvider and vim.lsp.semantic_tokens end,
         -- },
         ["<leader>la"] = { function() vim.lsp.buf.code_action() end, desc = "Apply Code Actions" },
-        ["<leader>ls"] = { function() vim.lsp.buf.signature_help() end, desc = "Signature Help" },
+        ["<leader>lm"] = { function() vim.lsp.buf.signature_help() end, desc = "Signature Help" },
         ["<leader>lr"] = { function() vim.lsp.buf.rename() end, desc = "Rename" },
         ["<leader>lR"] = { function() vim.lsp.buf.references() end, desc = "References" },
         ["<leader>li"] = { function() vim.lsp.buf.implementation() end, desc = "Implementation" },
