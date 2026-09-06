@@ -98,7 +98,15 @@ return {
           desc = "Toggle relativenumber",
         },
 
-        ["<Leader>md"] = { "<Plug>(doge-generate)", desc = "Generate docstrings" },
+        -- ["<Leader>md"] = { "<Plug>(doge-generate)", desc = "Generate docstrings" },
+        ["<leader>md"] = { "<cmd>DogeGenerate<CR>", desc = "Generate documentation comments" },
+        ["<leader>me"] = {
+          function()
+            local h = require "helpers"
+            h.generate_enum_tostring_array()
+          end,
+          desc = "Generate enum to string array.",
+        },
         ["<Leader>moc"] = { function() require("opencode").ask("@this: ", { submit = true }) end, desc = "Ask opencode…" },
         ["<Leader>mos"] = { function() require("opencode").select() end, desc = "Select opencode…" },
         ["<Leader>mot"] = { function() require("opencode").toggle() end, desc = "Toggle opencode" },
@@ -115,6 +123,7 @@ return {
         ["<Leader>mcb"] = { "<cmd>ClaudeCodeAdd %<cr>", desc = "Add current buffer" },
         ["<Leader>mca"] = { "<cmd>ClaudeCodeDiffAccept<cr>", desc = "Accept diff" },
         ["<Leader>mcd"] = { "<cmd>ClaudeCodeDiffDeny<cr>", desc = "Deny diff" },
+        ["<leader>mcs"] = { "<cmd>ClaudeCodeSend<cr>", desc = "Send to Claude" },
         -- ["<Leader>mcs"] = { "<cmd>ClaudeCodeTreeAdd<cr>", desc = "Add file", ft = { "NvimTree", "neo-tree", "oil", "minifiles", "netrw" },}
 
         -- tables with just a `desc` key will be registered with which-key if it's installed

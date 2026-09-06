@@ -139,14 +139,18 @@ return {
           end,
           desc = "Move to the Next Diagnostic",
         },
-        ["<leader>lc"] = { "<cmd>DogeGenerate<CR>", desc = "Generate documentation comments" },
-        ["<leader>le"] = {
+        ["<leader>lj"] = {
           function()
-            local h = require "helpers"
-            h.generate_enum_tostring_array()
+            vim.lsp.inlay_hint.enable(
+                not vim.lsp.inlay_hint.is_enabled()
+            )
           end,
-          desc = "Generate enum to string array.",
+          desc = "Toggle inlay hints",
         },
+        ["<leader>lH"] = {
+          vim.lsp.buf.hover,
+          desc = "Hover",
+        }
       },
     },
     -- A custom `on_attach` function to be run after the default `on_attach` function
