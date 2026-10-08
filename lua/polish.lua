@@ -45,10 +45,55 @@ vim.lsp.config('pylsp', {
                     enabled = true,
                     maxLineLength = 120,
                 },
+                jedi_completion = {
+                    eager = false,
+                    include_params = false,
+                    resolve_at_most = 10,
+                    cache_for = {
+                        'pandas',
+                        'numpy',
+                        'torch',
+                        'tensorflow',
+                        'matplotlib',
+                        'scipy',
+                        'transformers',
+                        'datasets',
+                        'accelerate',
+                        'bitsandbytes',
+                        'sklearn',
+                    },
+                },
+                rope_autoimport = { enabled = false },
+                rope_completion = { enabled = true },
             },
         },
     },
 })
+
+vim.lsp.config("pyright", {
+  settings = {
+    python = {
+      analysis = {
+        autoImportCompletions = true,
+        diagnosticMode = "openFilesOnly",
+        logLevel = "Trace",
+      },
+    },
+  },
+})
+
+-- vim.lsp.config('pylsp', {
+--     settings = {
+--         pylsp = {
+--             plugins = {
+--                 pycodestyle = {
+--                     enabled = true,
+--                     maxLineLength = 120,
+--                 },
+--             },
+--         },
+--     },
+-- })
 
 vim.lsp.config("rust_analyzer", {
     settings = {
