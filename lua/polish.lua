@@ -35,6 +35,9 @@ vim.lsp.config('clangd', {
         "--background-index",
         "--fallback-style=WebKit",
     },
+    init_options = {
+        fallbackFlags = { '-std=c++23' },
+    },
 })
 
 vim.lsp.config('pylsp', {
